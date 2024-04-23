@@ -1,24 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import TotalBalanceHeader from './src/components/TotalBalanceHeader';
-import AddExpense from './src/components/AddExpense';
-import AddIncome from './src/components/AddIncome';
-import TrackingGraph from './src/components/TrackingGraph';
-import Transactions from './src/components/Transactions';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import AppNavigator from './src/components/HomeScreen/AppNavigator'
+
 
 export default function App() {
   return (
-    <View style={{ flex: 1, backgroundColor: 'black' }}>
-      <TotalBalanceHeader />
-      <View style={{ flexDirection: 'row', justifyContent: 'space-evenly' }}>
-        <AddExpense />
-        <AddIncome />
-      </View>
-      <TrackingGraph/>
-      <Transactions/>
-    </View>
-  );
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-});
+const styles = StyleSheet.create({})
