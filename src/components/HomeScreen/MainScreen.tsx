@@ -5,6 +5,7 @@ import AddExpense from './AddExpense';
 import AddIncome from './AddIncome';
 import TrackingGraph from './TrackingGraph';
 import Transactions from './Transactions';
+import React from 'react';
 
 export default function App() {
   return (
