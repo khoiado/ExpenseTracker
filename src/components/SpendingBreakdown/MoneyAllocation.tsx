@@ -62,6 +62,7 @@ export default function MoneyAllocation() {
         <>
             <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                 <PieChart
+                    paddingLeft='10'
                     data={data}
                     width={screenWidth}
                     height= {220}
