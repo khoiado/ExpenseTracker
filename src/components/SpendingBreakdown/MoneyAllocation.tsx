@@ -1,3 +1,4 @@
+//Preparing permanent stuff when file loads. Just needs to be done once
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { PieChart } from 'react-native-chart-kit';
@@ -5,7 +6,7 @@ import { Dimensions } from 'react-native';
 
 
 export default function MoneyAllocation() {
-
+    //Preparing data for components. Put here if data changes when component loads
     const screenWidth = Dimensions.get('window').width
     const screenHeight = Dimensions.get('window').height
 
@@ -59,6 +60,7 @@ export default function MoneyAllocation() {
     };
 
     return (
+        //Loading front-end components. Process data before loading component. Sending back component that makes up app
         <>
             <View style={{ alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                 <PieChart

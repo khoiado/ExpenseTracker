@@ -5,3 +5,13 @@ add transactions and tag them. have them be deducted from the total budget for t
 funcontest between friends. i saved x% of my total budget to friends
 
 stats graph that tracks all ur previous expenses and groups them into categories so you know where your money is going
+
+
+
+Form:
+
+-Name of transaction
+-Price of transaction
+-List of categories
+
+Confirm button - inserts data into database, navigate back to the homescreen
