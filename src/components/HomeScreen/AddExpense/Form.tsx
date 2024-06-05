@@ -8,44 +8,76 @@ export default function Form() {
     const [categories, setCategories] = useState(Array<String>)
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <TextInput
-                style={styles.input}
-                onChangeText={setTransactionName}
-                value={transactionName}
-            />
-            <TextInput
-                style={styles.input}
-                onChangeText={setTransactionAmount}
-                value={transactionAmount}
-                keyboardType='numeric'
-            />
+        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <Text>Transaction name:</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setTransactionName}
+                    value={transactionName}
+                />
+                <Text>Transaction amount:</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setTransactionAmount}
+                    value={transactionAmount}
+                    keyboardType='numeric'
+                />
+            </View>
 
-       {/*L = [1,2,3]
-
-    R = [L, 4]    # [[1,2,3],4]
-    R = [...L, 4] # [1,2,3,4]*/}
-
-            <BouncyCheckbox
-                onPress={(isChecked: boolean) => {
-                    setCategories([...categories, 'Rent'])
-                    console.log(categories)
-                }}
-                fillColor='#038aff'
-            />
-            <BouncyCheckbox
-            onPress={(isChecked: boolean) => {
-                setCategories([...categories, 'Food'])
-            }}
-                fillColor='#038aff'
-            />
-            <BouncyCheckbox
-            onPress={(isChecked: boolean) => {
-                setCategories([...categories, 'Shopping'])
-            }}
-                fillColor='#038aff'
-            />
-
+            <View style={{ flexDirection: 'row' }}>
+                <BouncyCheckbox
+                    onPress={(isChecked: boolean) => {
+                        console.log(isChecked)
+                        if (isChecked) {
+                            setCategories([...categories, 'Rent'])
+                        } else {
+                            setCategories(categories.filter(category => category !== 'Rent'))
+                        }
+                    }}
+                    fillColor='#038aff'
+                />
+                <Text>Rent</Text>
+                <BouncyCheckbox
+                    onPress={(isChecked: boolean) => {
+                        if (isChecked) {
+                            setCategories([...categories, 'Food'])
+                        } else {
+                            setCategories(categories.filter(category => category !== 'Food'))
+                        }
+                    }}
+                    fillColor='#038aff'
+                />
+                <Text>Food</Text>
+                <BouncyCheckbox
+                    onPress={(isChecked: boolean) => {
+                        if (isChecked) {
+                            setCategories([...categories, 'Shopping'])
+                        } else {
+                            setCategories(categories.filter(category => category !== 'Shopping'))
+                        }
+                    }}
+                    fillColor='#038aff'
+                />
+                <Text>Shopping</Text>
+                <BouncyCheckbox
+                    onPress={(isChecked: boolean) => {
+                        if (isChecked) {
+                            setCategories([...categories, 'Something'])
+                        } else {
+                            setCategories(categories.filter(category => category !== 'Something'))
+                        }
+                    }}
+                    fillColor='#038aff'
+                />
+                <Text>Something</Text>
+                <BouncyCheckbox
+                    onPress={(isChecked: boolean) => {
+                        console.log(categories)
+                    }}
+                    fillColor='#038aff'
+                />
+            </View>
         </View>
     )
 }
